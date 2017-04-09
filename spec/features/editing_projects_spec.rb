@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.feature 'Users can edit existing projects' do
   before do
-    FactoryGirl.create(:project, name: 'Atom.io')
+    FactoryGirl.create(:project, name: 'Vim')
 
     visit '/'
-    click_link 'Atom.io'
+    click_link 'Vim'
     click_link 'Edit Project'
   end
 
