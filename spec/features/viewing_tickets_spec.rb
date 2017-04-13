@@ -5,11 +5,14 @@ RSpec.feature 'Users can view tickets' do
     user = FactoryGirl.create(:user)
 
     atom = FactoryGirl.create(:project, name: 'Atom.io')
+    assign_role!(user, :viewer, atom)
     FactoryGirl.create(:ticket, project: atom, user: user, name: 'Make it shiny!', description: 'Gradients! Starbursts! Oh my!')
 
     ie = FactoryGirl.create(:project, name: 'Internet Explorer')
+    assign_role!(user, :viewer, ie)
     FactoryGirl.create(:ticket, project: ie, user: user, name: 'Standards compliance', description: 'Isn\'t a joke.')
 
+    login_as(user)
     visit '/'
   end
 
