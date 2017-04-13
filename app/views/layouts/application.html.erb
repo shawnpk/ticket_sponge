@@ -33,7 +33,7 @@
             <li class='<%= 'active' if current_page?('/') %>'>
               <%= link_to "Home", root_path %>
             </li>
-            <%= admin_only do %>
+            <% admin_only do %>
               <li>
                 <%= link_to "Admin", admin_root_path %>
               </li>
