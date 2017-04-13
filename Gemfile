@@ -38,3 +38,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem 'simple_form', '~> 3.4'
+gem 'devise', '~> 4.2', '>= 4.2.1'
