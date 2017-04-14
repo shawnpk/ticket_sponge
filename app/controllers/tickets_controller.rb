@@ -42,6 +42,8 @@ class TicketsController < ApplicationController
   end
 
   def destroy
+    authorize @ticket
+
     @ticket.delete
     flash[:notice] = 'Ticket has been deleted.'
 
