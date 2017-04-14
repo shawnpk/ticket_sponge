@@ -12,4 +12,8 @@ class TicketPolicy < ApplicationPolicy
   def create?
     user.try(:admin?) || record.project.has_manager?(user) || record.project.has_editor?(user)
   end
+
+  def update?
+    user.try(:admin?) || record.project.has_manager?(user) || (record.project.has_editor?(user) && record.user == user)
+  end
 end
